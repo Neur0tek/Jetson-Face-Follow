@@ -41,12 +41,16 @@ sudo reboot
 
 Check that your user is into the i2c group with the command `groups`
 
+![groups](https://user-images.githubusercontent.com/36542615/60292686-fb41b700-991d-11e9-84a7-5543681a7f13.png)
+
 Verify if the PCA9685 board is detected ( be sur to select the correct i2c bus on your nano ) :
 ```bash
 i2cdetect -y -r 0
 ```
-The device should be detected as 0x40 as i the image below : 
+The device should be detected as 0x40 as below : 
+
 ![i2cdetect](https://user-images.githubusercontent.com/36542615/60292081-a6ea0780-991c-11e9-95a6-5af4f933faa3.png)
+
 ## Usage 
 
 ```bash
