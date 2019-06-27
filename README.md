@@ -1,4 +1,10 @@
 # Jetson-Face-Follow
-Simple face follower with Nvidia Jetson and OpenCV 
+Simple face follower with Nvidia Jetson and OpenCV
 
-#Installation
+## Installation
+
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+sudo apt-get install python-dev
+
+
