@@ -43,7 +43,7 @@ Check that your user is into the i2c group with the command `groups`
 
 ![groups](https://user-images.githubusercontent.com/36542615/60292686-fb41b700-991d-11e9-84a7-5543681a7f13.png)
 
-Verify if the PCA9685 board is detected ( be sur to select the correct i2c bus on your nano ) :
+Verify if the PCA9685 board is detected ( be sure to select the correct i2c bus on your nano ) :
 ```bash
 i2cdetect -y -r 0
 ```
