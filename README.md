@@ -28,7 +28,7 @@ First install the dependencies :
 ```bash
 sudo apt-get install python-smbus
 sudo apt-get install i2c-tools
-sudo apt-get install python-dev
+sudo apt-get install python3-dev
 sudo pip install adafruit-pca9685
 sudo pip install imutils
 ```
@@ -45,7 +45,8 @@ Verify if the PCA9685 board is detected ( be sur to select the correct i2c bus o
 ```bash
 i2cdetect -y -r 0
 ```
-
+The device should be detected as 0x40 as i the image below : 
+![i2cdetect](https://user-images.githubusercontent.com/36542615/60292081-a6ea0780-991c-11e9-95a6-5af4f933faa3.png)
 ## Usage 
 
 ```bash
