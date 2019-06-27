@@ -4,6 +4,8 @@
 # Jetson-Face-Follow
 Simple face follower for the Nvidia Jetson using OpenCV and python3
 
+![face_follow](https://user-images.githubusercontent.com/36542615/60295454-013a9680-9924-11e9-9129-40982a8e7d27.png)
+
 ## Material 
 
 * Nvidia Jetson Nano 
