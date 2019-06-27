@@ -1,4 +1,5 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+https://img.shields.io/badge/Python-3.6-green.svg
 
 # Jetson-Face-Follow
 Simple face follower for the Nvidia Jetson using OpenCV and python3
