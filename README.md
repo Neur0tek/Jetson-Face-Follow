@@ -13,8 +13,8 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 PCA        Jetson
 GND <----> GND
 OE  <----> NC
-SCL <----> SCL
-SDA <----> SDA
+SCL <----> SCL (PIN 28)
+SDA <----> SDA (PIN 27)
 Vcc <----> 3.3V
 V+  <----> NC
 ```
