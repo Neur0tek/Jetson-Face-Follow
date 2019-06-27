@@ -3,9 +3,9 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 
 ## Material 
 
--Nvidia Jetson Nano 
--SD Card 64go 
--Adafruit PCA9685
+* Nvidia Jetson Nano 
+* SD Card 64go 
+* Adafruit PCA9685
 
 ## Installation
 ```
