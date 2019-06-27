@@ -10,7 +10,7 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 * Pi Camera v2 (IMX219 sensor)
 * Adafruit PCA9685
 
-## WIRING
+## Wiring
 ```
 PCA        Jetson
 GND <----> GND
