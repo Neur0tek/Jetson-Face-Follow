@@ -59,5 +59,5 @@ python3 JetsonCvPCA.py WIDTH HEIGHT
 ```
 ### Informations
 
-This is just a quick proof of work , there is still a lot of improvements to do in order to have it to work faster.
+This is just a quick proof of concept , there is still a lot of improvements to do in order to have it to work faster.
 I will do my best in order to keep the code updated ;-) 
