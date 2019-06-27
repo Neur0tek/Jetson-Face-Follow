@@ -8,6 +8,16 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 * Pi Camera v2 (IMX219 sensor)
 * Adafruit PCA9685
 
+## WIRING
+```
+PCA        Jetson
+GND <----> GND
+OE  <----> NC
+SCL <----> SCL
+SDA <----> SDA
+Vcc <----> 3.3V
+V+  <----> NC
+```
 
 ## Installation
 
@@ -28,6 +38,10 @@ sudo reboot
 
 Check that your user is into the i2c group with the command `groups`
 
+Verify if the PCA9685 board is detected ( be sur to select the correct i2c bus on your nano ) :
+```
+i2cdetect -y -r 0
+```
 
 ## Usage 
 
