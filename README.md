@@ -51,7 +51,7 @@ i2cdetect -y -r 0
 ```
 The device should be detected as 0x40 as below : 
 
-![i2cdetect](https://user-images.githubusercontent.com/36542615/60292081-a6ea0780-991c-11e9-95a6-5af4f933faa3.png)
+![i2cdetect](https://user-images.githubusercontent.com/36542615/60295542-478ff580-9924-11e9-876b-ab71701c178f.png)
 
 ## Usage 
 
