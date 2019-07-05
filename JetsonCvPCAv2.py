@@ -1,5 +1,6 @@
 #Face Follower for Nvidia Jetson Nano by Neurotek
 #Code based on JetsonHacks article for the camera access : https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/  
+#Connect MG90S servo to Channel 0 of the PCA9685
 #WORK IN PROGRESS 
 
 from __future__ import division
