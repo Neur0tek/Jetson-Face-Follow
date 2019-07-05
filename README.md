@@ -2,7 +2,7 @@
 ![release](https://img.shields.io/github/downloads/Neur0tek/Jetson-Face-Follow/total.svg)
 
 # Jetson-Face-Follow ( /!\ WORK IN PROGRESS /!\ ) 
-Simple face follower for the Nvidia Jetson using OpenCV and python3
+Simple face follower for the Nvidia Jetson using OpenCV and InMoove eye mechanism
 
 ![face_follow](https://user-images.githubusercontent.com/36542615/60295454-013a9680-9924-11e9-9129-40982a8e7d27.png)
 
@@ -14,6 +14,7 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 * Pi Camera v2 (IMX219 sensor)
 * Adafruit PCA9685
 * MG90S Servo
+* InMoov Eye Mechanisme (Optional)
 
 ## Wiring
 ```
@@ -60,8 +61,12 @@ The device should be detected as 0x40 as below :
 ## Usage 
 
 ```bash
-python3 JetsonCvPCA.py WIDTH HEIGHT (ex. python3 JetsonCvPCA.py 640 480)
+python3 JetsonCvPCA.py WIDTH HEIGHT 
+
+ex. python3 JetsonCvPCA.py 640 480
 ```
+![gif](README/negif.gif)
+
 ### Informations
 
 This is just a quick proof of concept , there is still a lot of improvements to do in order to have it to work faster.
