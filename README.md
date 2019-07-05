@@ -6,12 +6,14 @@ Simple face follower for the Nvidia Jetson using OpenCV and python3
 
 ![face_follow](https://user-images.githubusercontent.com/36542615/60295454-013a9680-9924-11e9-9129-40982a8e7d27.png)
 
+
 ## Material 
 
 * Nvidia Jetson Nano 
 * SD Card 64go 
 * Pi Camera v2 (IMX219 sensor)
 * Adafruit PCA9685
+* MG90S Servo
 
 ## Wiring
 ```
@@ -22,6 +24,8 @@ SCL <----> SCL (PIN 28)
 SDA <----> SDA (PIN 27)
 Vcc <----> 3.3V
 V+  <----> NC
+
+Connect MG90S servo to Channel 0 of the PCA9685
 ```
 
 ## Installation
@@ -56,7 +60,7 @@ The device should be detected as 0x40 as below :
 ## Usage 
 
 ```bash
-python3 JetsonCvPCA.py WIDTH HEIGHT 
+python3 JetsonCvPCA.py WIDTH HEIGHT (ex. python3 JetsonCvPCA.py 640 480)
 ```
 ### Informations
 
