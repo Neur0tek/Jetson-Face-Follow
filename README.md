@@ -4,7 +4,7 @@
 # Jetson-Face-Follow ( /!\ WORK IN PROGRESS /!\ ) 
 Simple face follower for the Nvidia Jetson using OpenCV and InMoove eye mechanism
 
-![face_follow](https://user-images.githubusercontent.com/36542615/60295454-013a9680-9924-11e9-9129-40982a8e7d27.png)
+![gif](README/negif.gif)
 
 
 ## Material 
@@ -65,7 +65,8 @@ python3 JetsonCvPCA.py WIDTH HEIGHT
 
 ex. python3 JetsonCvPCA.py 640 480
 ```
-![gif](README/negif.gif)
+
+![face_follow](https://user-images.githubusercontent.com/36542615/60295454-013a9680-9924-11e9-9129-40982a8e7d27.png)
 
 ### Informations
 
