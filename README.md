@@ -2,7 +2,7 @@
 ![release](https://img.shields.io/github/downloads/Neur0tek/Jetson-Face-Follow/total.svg)
 
 # Jetson-Face-Follow ( /!\ WORK IN PROGRESS /!\ ) 
-Simple face follower for the Nvidia Jetson using OpenCV and InMoove eye mechanism
+Simple face follower for the Nvidia Jetson using OpenCV and InMoov eye mechanism
 
 ![gif](README/negif.gif)
 
