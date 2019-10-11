@@ -1,6 +1,5 @@
 #Face Follower for Nvidia Jetson Nano by Neurotek
 #Code based on JetsonHacks article for the camera access : https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/  
-#Connect MG90S servo to Channel 0 of the PCA9685
 #WORK IN PROGRESS 
 
 from __future__ import division
@@ -14,9 +13,22 @@ WIDTH  = 640
 HEIGHT = 480
 
 servo = Adafruit_PCA9685.PCA9685(address=0x40, busnum=0)
+
+# Config Face to pinout 
+eyes_LR = 0
+eyes_UD = 1
+neck_LR = 2
+jaw_UD  = 3
+
 # Configure min and max servo pulse lengths
-servo_min = 950 # Min pulse length out of 4096
-servo_max = 1350 # Max pulse length out of 4096
+servo_min_eyesLR  = 250 # Min pulse length out of 4096
+servo_max_eyesLR  = 500 # Max pulse length out of 4096
+servo_min_eyesUD  = 600
+servo_max_eyesUD  = 150
+servo_min_neck_LR = 350
+servo_max_neck_LR = 250
+servo_min_jaw_UD= 645
+servo_max_jaw_UD = 600
 
 face_cascade = cv2.CascadeClassifier('/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml')
 
@@ -53,7 +65,8 @@ def gstreamer_pipeline (capture_width=WIDTH, capture_height=HEIGHT, display_widt
 welcome()
 
 servo.set_pwm_freq(60)
-
+servo.set_pwm(eyes_UD, 0, 450)
+time.sleep(0.4) 
 
 #################### Choix Resolution ############################
 w1= int(sys.argv[1])
@@ -87,9 +100,9 @@ fps = FPS().start()
 
 if cap.isOpened():
 
-    window_handle = cv2.namedWindow('Neurotek Face Detect', cv2.WINDOW_AUTOSIZE)
+    window_handle = cv2.namedWindow('Face Detect', cv2.WINDOW_AUTOSIZE)
     
-    while cv2.getWindowProperty('Neurotek Face Detect',0) >= 0:
+    while cv2.getWindowProperty('Face Detect',0) >= 0:
             ret, img = cap.read()
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             faces = face_cascade.detectMultiScale(gray, 1.3, 5)
@@ -108,17 +121,33 @@ if cap.isOpened():
                 ###################### Face follower ################################################
                 if x < ((WIDTH/2)-x):
                     print("[TARGET] Left")
-                    servo.set_pwm(0, 0, servo_min)
-                    time.sleep(1)
+                    servo.set_pwm(eyes_LR, 0, 1150)
+                    servo.set_pwm(neck_LR, 0, servo_min_neck_LR)
+                    time.sleep(0.4)
                 elif x > (WIDTH/2) :
                     print("[TARGET] Right")
-                    servo.set_pwm(0, 0, servo_max)
-                    time.sleep(1)
+                    servo.set_pwm(eyes_LR, 0, 1150)
+                    time.sleep(0.4)
+                    servo.set_pwm(neck_LR, 0, servo_max_neck_LR)
+                    time.sleep(0.4)
+                    
                 else:
                     print("[TARGET] Straight")
-                    servo.set_pwm(0, 0, 1150)
-                    time.sleep(1)
-            cv2.imshow('Neurotek Face Detect',img) 
+                    servo.set_pwm(eyes_LR, 0, 1150)
+                    time.sleep(0.2)
+                    servo.set_pwm(neck_LR, 0, 300)
+                    time.sleep(0.2)
+                    servo.set_pwm(eyes_UD, 0, servo_min_eyesUD)
+                    time.sleep(0.2)
+                    servo.set_pwm(eyes_UD, 0, servo_max_eyesUD)
+                    time.sleep(0.2)
+                    servo.set_pwm(jaw_UD, 0, servo_min_jaw_UD) # JAW
+                    time.sleep(0.4)
+                    servo.set_pwm(jaw_UD, 0, servo_max_jaw_UD)
+                    time.sleep(0.4)
+                    
+                    
+            cv2.imshow('Face Detect',img) 
             fps.update()       
             
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -132,6 +161,7 @@ if cap.isOpened():
 
 else:
     print("[FATAL]Unable to open camera\nQuitting now ...")
+
 
 
 
